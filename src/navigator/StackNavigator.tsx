@@ -4,12 +4,15 @@ import { Pagina1Screen } from '../screens/Pagina1Screen';
 import { Pagina2Screen } from '../screens/Pagina2Screen';
 import { Pagina3Screen } from '../screens/Pagina3Screen';
 
+//Se usa la funcion para crear un stack navigator
+//Para la navegación se debe usar el name para referenciar a que
+//página deseamos ir el componet define la página screen
 const Stack = createStackNavigator();
 
 export const StackNavigator=()=> {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Página1Screen" component={Pagina1Screen} />
+      <Stack.Screen name="Pagina1Screen" component={Pagina1Screen} />
       <Stack.Screen name="Pagina2Screen" component={Pagina2Screen} />
       <Stack.Screen name="Pagina3Screen" component={Pagina3Screen} />
       
