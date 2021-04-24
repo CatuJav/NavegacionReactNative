@@ -43,6 +43,17 @@ export const Pagina1Screen = ({navigation}:Props) => {
             })}>
                 <Text>Pedro</Text>
            </TouchableOpacity>
+
+           <TouchableOpacity 
+           /**En la navegación también puedo enviarr parametros
+            * navigation.navigate('Pagina',{Parametros})
+            */
+            onPress={()=>navigation.navigate('PaginaPersona',{
+                id:1,
+                nombre:'María'
+            })}>
+                <Text>María</Text>
+           </TouchableOpacity>
         </View>
     )
 }
