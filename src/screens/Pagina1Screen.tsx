@@ -1,5 +1,6 @@
+import { DrawerScreenProps } from '@react-navigation/drawer';
 import { StackScreenProps } from '@react-navigation/stack';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { styles } from '../theme/appTheme';
@@ -8,12 +9,27 @@ import { styles } from '../theme/appTheme';
 //navegación extendiendo de StackScreenProps y pasando como
 //página el name del stack que se definio en StackNavigator 
 //con el component screen que abre
-interface Props extends StackScreenProps<any,any>{
+//interface Props extends StackScreenProps<any,any>{
+
+//Estos es para el menu hambuerguesa
+interface Props extends DrawerScreenProps<any,any>{
     
 }
 
 export const Pagina1Screen = ({navigation}:Props) => {
     //console.log(props);
+
+    useEffect(() => {
+        navigation.setOptions({
+            headerLeft:()=>(
+                <Button
+                    title='Menú'
+                    onPress={()=>{navigation.toggleDrawer()}}
+                />
+            )
+        })
+    }, [])
+
     return (
         <View style={styles.globalMargin}>
            <Text style={styles.title}>Pagina1Screen</Text> 
