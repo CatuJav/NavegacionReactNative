@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Text, View } from 'react-native'
 import { StackScreenProps } from '@react-navigation/stack';
+import { styles } from '../theme/appTheme';
 
 //A parte tambien se puede usar las props para realizar la
 //navegación extendiendo de StackScreenProps y pasando como
@@ -10,7 +11,7 @@ interface Props extends StackScreenProps<any,any>{};
 export const Pagina3Screen = ({navigation}:Props) => {
     return (
         <View>
-           <Text>Pagina3Screen</Text> 
+           <Text style={styles.title}>Pagina3Screen</Text> 
 
            <Button
             title='Regresar'
