@@ -33,27 +33,31 @@ export const Pagina1Screen = ({navigation}:Props) => {
 
            {/* Crear botones personalizados */}
            <Text>Navegar con argunmentos</Text>
+           <View style={{flexDirection:'row'}}>
            <TouchableOpacity 
+            style={{...styles.botonGrande, backgroundColor:'#5856d6'}}
            /**En la navegación también puedo enviarr parametros
             * navigation.navigate('Pagina',{Parametros})
             */
-            onPress={()=>navigation.navigate('PaginaPersona',{
+            onPress={()=>navigation.navigate('PersonaScreen',{
                 id:1,
                 nombre:'Pedro'
             })}>
-                <Text>Pedro</Text>
+                <Text style={styles.botonGrandeTexto}>Pedro</Text>
            </TouchableOpacity>
 
            <TouchableOpacity 
+            style={{...styles.botonGrande, backgroundColor:'#ff9427'}}
            /**En la navegación también puedo enviarr parametros
             * navigation.navigate('Pagina',{Parametros})
             */
-            onPress={()=>navigation.navigate('PaginaPersona',{
+            onPress={()=>navigation.navigate('PersonaScreen',{
                 id:1,
                 nombre:'María'
             })}>
-                <Text>María</Text>
+                <Text style={styles.botonGrandeTexto}>María</Text>
            </TouchableOpacity>
+           </View>
         </View>
     )
 }
