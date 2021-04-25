@@ -48,7 +48,10 @@ export const Pagina1Screen = ({navigation}:Props) => {
            /> */}
 
            {/* Crear botones personalizados */}
-           <Text>Navegar con argunmentos</Text>
+           <Text style={
+               {marginVertical:20, 
+                fontSize:20,
+                marginLeft:5}}>Navegar con argunmentos</Text>
            <View style={{flexDirection:'row'}}>
            <TouchableOpacity 
             style={{...styles.botonGrande, backgroundColor:'#5856d6'}}

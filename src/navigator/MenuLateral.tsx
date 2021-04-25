@@ -4,8 +4,23 @@ import { StackNavigator } from './StackNavigator';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { Image, Text, useWindowDimensions, View, TouchableOpacity } from 'react-native';
 import { styles } from '../theme/appTheme';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Drawer = createDrawerNavigator();
+/**Puedo crear un nuevo stack para crear un header en el SettingsScreen
+ * Sin que aparesca el icono de hamburguesa
+ */
+// const Stack=createStackNavigator();
+// const SettingsStackScreen=()=>{
+//   return (
+//     <Stack.Navigator>
+//       <Stack.Screen 
+//         name='SettingScreen'
+//         component={SettingsScreen}
+//       />
+//     </Stack.Navigator>
+//   );
+// }
 
 export const MenuLateral=() =>{
   const {width}=useWindowDimensions();
