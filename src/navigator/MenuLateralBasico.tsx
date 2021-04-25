@@ -14,7 +14,7 @@ export const MenuLateralBasico=() =>{
       drawerType={width>=768?'permanent':'front'}
     >
       <Drawer.Screen name="StackNavigator"  component={StackNavigator} />
-      <Drawer.Screen name="SettingScreen"   component={SettingsScreen} />
+      <Drawer.Screen name="SettingScreen" options={{title:'Setttings'}}   component={SettingsScreen} />
     </Drawer.Navigator>
   );
 }

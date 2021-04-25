@@ -4,6 +4,7 @@ import { Text } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { StackNavigator } from './src/navigator/StackNavigator';
 import { MenuLateralBasico } from './src/navigator/MenuLateralBasico';
+import { MenuLateral } from './src/navigator/MenuLateral';
 
 export const App = () => {
   return (
@@ -13,8 +14,11 @@ export const App = () => {
       </Text> */}
       {/* <StackNavigator></StackNavigator> */}
       
-      {/**Ahora ya no llamamos al menu lateral primero  */}
-      <MenuLateralBasico/>
+      {/* *Ahora ya no llamamos al menu lateral básico primero 
+      <MenuLateralBasico/> */}
+
+      {/**Mostrar el munu lateral */}
+      <MenuLateral/>
     </NavigationContainer>
   )
 }
