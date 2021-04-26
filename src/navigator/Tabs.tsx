@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { TopTabNavigator } from './TopTabNavigator';
 import { Tab1Screen } from '../screens/Tab1Screen';
 import { Tab2Screen } from '../screens/Tab2Screen';
 import { Tab3Screen } from '../screens/Tab3Screen';
@@ -8,6 +9,10 @@ import { StackNavigator } from './StackNavigator';
 import { colores, styles } from '../theme/appTheme';
 import { Platform, Text } from 'react-native';
 
+import { LogBox } from 'react-native';
+//Para ignorar el menaje de advertencia que
+//aparece durante desarrollo en una caja
+LogBox.ignoreLogs(['Reanimated']);
 
 export const  Tabs=()=>{
   return Platform.OS==='ios'
@@ -56,7 +61,7 @@ export const  TabsAndroid=()=> {
       }
     >
        <BottomTabIOS.Screen name="Tab1Screen" options={{title:'Tab 1'}} component={Tab1Screen} />
-      <BottomTabIOS.Screen name="Tab2Screen" options={{title:'Tab 2'}} component={Tab2Screen} />
+      <BottomTabIOS.Screen name="TopTabNavigator" options={{title:'Tab 2'}} component={TopTabNavigator} />
       <BottomTabIOS.Screen name="StackNavigator" options={{title:'Stack'}} component={StackNavigator} />
     </BottomTabAndroid.Navigator>
   );
@@ -120,7 +125,7 @@ export const TabsIOS=()=> {
       )}} component={Tab1Screen} /> */}
 
       <BottomTabIOS.Screen name="Tab1Screen" options={{title:'Tab 1'}} component={Tab1Screen} />
-      <BottomTabIOS.Screen name="Tab2Screen" options={{title:'Tab 2'}} component={Tab2Screen} />
+      <BottomTabIOS.Screen name="Tab2Screen" options={{title:'Tab 2'}} component={TopTabNavigator} />
       <BottomTabIOS.Screen name="StackNavigator" options={{title:'Stack'}} component={StackNavigator} />
       
     </BottomTabIOS.Navigator>
