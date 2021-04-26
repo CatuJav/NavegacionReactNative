@@ -5,6 +5,7 @@ import { SettingsScreen } from '../screens/SettingsScreen';
 import { Image, Text, useWindowDimensions, View, TouchableOpacity } from 'react-native';
 import { styles } from '../theme/appTheme';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Tabs } from './Tabs';
 
 const Drawer = createDrawerNavigator();
 /**Puedo crear un nuevo stack para crear un header en el SettingsScreen
@@ -30,7 +31,7 @@ export const MenuLateral=() =>{
       drawerType={width>=768?'permanent':'front'}
       drawerContent={(props)=>(<MenuInterno {...props}/>)}
     >
-      <Drawer.Screen name="StackNavigator"  component={StackNavigator} />
+      <Drawer.Screen name="Tabs"  component={Tabs} />
       <Drawer.Screen name="SettingScreen"   component={SettingsScreen} />
     </Drawer.Navigator>
   );
@@ -54,7 +55,7 @@ const MenuInterno=({navigation}:DrawerContentComponentProps<DrawerContentOptions
       {/**Opciones de menu */}
       <View style={styles.menuContainer}>
         <TouchableOpacity 
-        onPress={()=>navigation.navigate('StackNavigator')}
+        onPress={()=>navigation.navigate('Tabs')}
         style={styles.menuBoton}>
           <Text style={styles.menuTexto}>Navegación</Text>
         </TouchableOpacity>
