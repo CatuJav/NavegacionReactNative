@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react'
-import { Text } from 'react-native'
+import { Platform, StatusBar, Text } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { StackNavigator } from './src/navigator/StackNavigator';
 import { MenuLateralBasico } from './src/navigator/MenuLateralBasico';
@@ -10,6 +10,10 @@ import { Tabs } from './src/navigator/Tabs';
 export const App = () => {
   return (
     <NavigationContainer>
+      {/* <StatusBar hidden={true}
+      //translucent={true}
+      //backgroundColor={Platform.OS =="ios"? "white" : "white"}
+      barStyle="light-content"></StatusBar> */}
       {/* <Text>
         Pantalla de navegación
       </Text> */}
