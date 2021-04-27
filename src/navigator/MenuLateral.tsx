@@ -3,9 +3,10 @@ import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentOption
 import { StackNavigator } from './StackNavigator';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { Image, Text, useWindowDimensions, View, TouchableOpacity } from 'react-native';
-import { styles } from '../theme/appTheme';
+import { colores, styles } from '../theme/appTheme';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Tabs } from './Tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Drawer = createDrawerNavigator();
 /**Puedo crear un nuevo stack para crear un header en el SettingsScreen
@@ -56,14 +57,16 @@ const MenuInterno=({navigation}:DrawerContentComponentProps<DrawerContentOptions
       <View style={styles.menuContainer}>
         <TouchableOpacity 
         onPress={()=>navigation.navigate('Tabs')}
-        style={styles.menuBoton}>
-          <Text style={styles.menuTexto}>Navegación</Text>
+        style={{...styles.menuBoton, flexDirection:'row', alignContent:'space-between', alignItems:'center'}}>
+          <Icon name='map-outline' size={20}  color={colores.primary}/>
+          <Text style={{...styles.menuTexto, marginLeft:10}}>Navegación</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
         onPress={()=>navigation.navigate('SettingScreen')}
-        style={styles.menuBoton}>
-          <Text style={styles.menuTexto}>Ajustes</Text>
+        style={{...styles.menuBoton, flexDirection:'row', alignItems:'center'}}>
+          <Icon name='settings-outline' size={20}  color={colores.primary}/>
+          <Text style={{...styles.menuTexto, marginLeft:10}}>Ajustes</Text>
         </TouchableOpacity>
       </View>
     </DrawerContentScrollView>

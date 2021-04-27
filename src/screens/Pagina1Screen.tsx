@@ -3,7 +3,9 @@ import { StackScreenProps } from '@react-navigation/stack';
 import React, { useEffect } from 'react'
 import { Button, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { styles } from '../theme/appTheme';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import IconIonic from 'react-native-vector-icons/Ionicons';
+import { styles, colores } from '../theme/appTheme';
 
 //A parte tambien se puede usar las props para realizar la
 //navegación extendiendo de StackScreenProps y pasando como
@@ -22,10 +24,19 @@ export const Pagina1Screen = ({navigation}:Props) => {
     useEffect(() => {
         navigation.setOptions({
             headerLeft:()=>(
-                <Button
-                    title='Menú'
-                    onPress={()=>{navigation.toggleDrawer()}}
-                />
+                // <Button
+                //     title='Menú'
+                //     onPress={()=>{navigation.toggleDrawer()}}
+                // />
+                <TouchableOpacity   
+                    onPress={()=>navigation.toggleDrawer()}
+                    style={{
+                        ...styles.globalMargin
+                    }}
+                >
+                    <Icon name='menu' size={30}  color={colores.primary}/>
+                    
+                </TouchableOpacity>
             )
         })
     }, [])
@@ -62,6 +73,7 @@ export const Pagina1Screen = ({navigation}:Props) => {
                 id:1,
                 nombre:'Pedro'
             })}>
+                <IconIonic name='man-sharp' size={30}  color='white'/>
                 <Text style={styles.botonGrandeTexto}>Pedro</Text>
            </TouchableOpacity>
 
@@ -71,9 +83,10 @@ export const Pagina1Screen = ({navigation}:Props) => {
             * navigation.navigate('Pagina',{Parametros})
             */
             onPress={()=>navigation.navigate('PersonaScreen',{
-                id:1,
+                id:2,
                 nombre:'María'
             })}>
+                <IconIonic name='woman-sharp' size={30}  color='white'/>
                 <Text style={styles.botonGrandeTexto}>María</Text>
            </TouchableOpacity>
            </View>

@@ -10,6 +10,7 @@ import { colores, styles } from '../theme/appTheme';
 import { Platform, Text } from 'react-native';
 
 import { LogBox } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 //Para ignorar el menaje de advertencia que
 //aparece durante desarrollo en una caja
 LogBox.ignoreLogs(['Reanimated']);
@@ -42,18 +43,21 @@ export const  TabsAndroid=()=> {
              let iconName:string='';
              switch (route.name) {
                case 'Tab1Screen':
-                 iconName='T1'
+                 iconName='apartment'
                  break;
                case 'Tab2Screen':
-                  iconName='T2'
+                  iconName='5g'
                   break;
                   case 'StackNavigator':
-                    iconName='St'
+                    iconName='home-work'
                     break;
                  
                
              }
-             return <Text style={{color}}>{iconName}</Text>
+             return <Text style={{color}}>
+              <Icon name={iconName} size={20}  color='white'/>
+
+             </Text>
 
            }
         } 
@@ -98,18 +102,21 @@ export const TabsIOS=()=> {
              let iconName:string='';
              switch (route.name) {
                case 'Tab1Screen':
-                 iconName='T1'
+                 iconName='apartment'
                  break;
                case 'Tab2Screen':
-                  iconName='T2'
+                  iconName='5g'
                   break;
                   case 'StackNavigator':
-                    iconName='St'
+                    iconName='home-work'
                     break;
                  
                
              }
-             return <Text style={{color}}>{iconName}</Text>
+             return <Text style={{color}}>
+              <Icon name={iconName} size={20}  color='white'/>
+
+             </Text>
 
            }
         } 
