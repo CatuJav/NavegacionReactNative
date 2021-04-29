@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import { styles, colores } from '../theme/appTheme';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { TouchableIcon } from '../components/TouchableIcon';
 
 export const Tab1Screen = () => {
  
@@ -16,13 +17,13 @@ export const Tab1Screen = () => {
         <View style={{...styles.globalMargin, marginTop:top+10}}>
             <Text>Iconos</Text>
             <Text>
-            <Icon name="flight-land" size={80} color={colores.primary} />
-            <Icon name="shopping-cart" size={80} color={colores.primary} />
-            <Icon name="verified" size={80} color={colores.primary} />
-            <Icon name="https" size={80} color={colores.primary} />
-            <Icon name="view-module" size={80} color={colores.primary} />
-            <Icon name="pivot-table-chart" size={80} color={colores.primary} />
-            <Icon name="work-outline" size={80} color={colores.primary} />
+            <TouchableIcon iconName="flight-land" size={80}  />
+            <TouchableIcon iconName="shopping-cart" size={80} />
+            <TouchableIcon iconName="verified" size={80}  />
+            <TouchableIcon iconName="https" size={80}  />
+            <TouchableIcon iconName="view-module" size={80} />
+            <TouchableIcon iconName="pivot-table-chart" size={80}  />
+            <TouchableIcon iconName="work-outline" size={80}  />
             </Text>
         </View>
     )
