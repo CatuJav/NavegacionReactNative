@@ -26,11 +26,16 @@ export const AuthContext=createContext({} as AuthContextProps);
 export const AuthProvider=({children}:{children:any})=>{
 
     const [authState, dispatch] = useReducer(authReducer, authInitialState);
+    
+    //Para llamar la acción 
+    const sigIn = ()=>{
+        dispatch({type:'signIn'});
+    }
     return (
         <AuthContext.Provider value={{
 
             authState:authState,
-            signIn:()=>{},
+            signIn:sigIn,
             
         }}>
             {children}
