@@ -1,9 +1,9 @@
 import { AuthState } from './AuthContext';
 
-
-type AuthAction={
-    type:'signIn'
-};
+//Creamos las acciones
+type AuthAction=
+| { type:'signIn'}
+| { type:'changeFavIcon', payload:string};//payload usualmente se pone para mandar informacion adicional
 
 //Genera estado
 //No se debe mutar el estado se debe regresar un nuevo estado
@@ -17,8 +17,12 @@ export const authReducer=(state:AuthState,action:AuthAction):AuthState=>{
                 isLogged:true,
                 userName:'no-usernanem-yet'
             };
-            
-    
+        //Cada una accion sabe los scopes que tiene    
+        case 'changeFavIcon':
+            return {
+                ...state,
+                favoriteIcon:action.payload
+            }
         default:
             return state;
     }

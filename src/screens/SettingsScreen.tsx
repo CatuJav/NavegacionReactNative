@@ -2,8 +2,9 @@ import React, { useContext, useEffect } from 'react'
 import { Text, View } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { styles } from '../theme/appTheme';
+import { styles, colores } from '../theme/appTheme';
 import { AuthContext } from '../context/AuthContext';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 interface Props extends StackScreenProps<any,any>{}
 export const SettingsScreen = ({navigation}:Props) => {
@@ -30,7 +31,19 @@ export const SettingsScreen = ({navigation}:Props) => {
             <Text style={styles.title}>SettingsScreen</Text>
             <Text>
                 {JSON.stringify(authState,null,4)}
+            
             </Text>
+
+            {/**Evaluar si en el authState existe el icono*/}
+            {
+                authState.favoriteIcon&&(
+                    <Icon 
+                        name={authState.favoriteIcon}
+                        size={150}
+                        color={colores.primary}
+                    />
+                )
+            }
         </View>
     )
 }
