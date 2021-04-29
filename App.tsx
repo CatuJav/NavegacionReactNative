@@ -35,7 +35,7 @@ export const App = () => {
 const AppState=({children}:any)=>{
   return (
     <AuthProvider>
-      {children}
+      {children}  
     </AuthProvider>
   )
 }
