@@ -3,6 +3,7 @@ import { AuthState } from './AuthContext';
 //Creamos las acciones
 type AuthAction=
 | { type:'signIn'}
+| { type:'logout'}
 | { type:'changeFavIcon', payload:string};//payload usualmente se pone para mandar informacion adicional
 
 //Genera estado
@@ -22,6 +23,13 @@ export const authReducer=(state:AuthState,action:AuthAction):AuthState=>{
             return {
                 ...state,
                 favoriteIcon:action.payload
+            }
+        case 'logout':
+            return{
+                ...state,
+                isLogged:false,
+                favoriteIcon:undefined,
+                userName:undefined,
             }
         default:
             return state;
