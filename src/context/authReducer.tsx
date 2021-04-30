@@ -4,6 +4,7 @@ import { AuthState } from './AuthContext';
 type AuthAction=
 | { type:'signIn'}
 | { type:'logout'}
+| { type:'changeUsername', payload:string}
 | { type:'changeFavIcon', payload:string};//payload usualmente se pone para mandar informacion adicional
 
 //Genera estado
@@ -30,6 +31,11 @@ export const authReducer=(state:AuthState,action:AuthAction):AuthState=>{
                 isLogged:false,
                 favoriteIcon:undefined,
                 userName:undefined,
+            }
+        case 'changeUsername':
+            return{
+                ...state,
+                userName:action.payload
             }
         default:
             return state;
